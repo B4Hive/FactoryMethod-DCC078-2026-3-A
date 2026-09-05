@@ -11,6 +11,7 @@ class PrintFactory {
 PrintFactory --> IPrintPattern
 PrintFactory --> Class
 PrintFactory --> Object
+PrintFactory --> Exception
 
 class PrintVertical implements IPrintPattern {
     +printPattern(float values[], int significantFigures):String
