@@ -1,0 +1,33 @@
+@startuml classDiagram
+
+interface IPrintPattern <<inferface>> {
+    +printPattern(float values[], int significantFigures):String
+}
+
+class PrintFactory {
+    +printPattern(float values[], String patternType, int significantFigures):String
+}
+
+PrintFactory --> IPrintPattern
+PrintFactory --> Class
+PrintFactory --> Object
+
+class PrintVertical implements IPrintPattern {
+    +printPattern(float values[], int significantFigures):String
+}
+
+PrintVertical --> StringBuilder
+
+class PrintHorizontal implements IPrintPattern {
+    +printPattern(float values[], int significantFigures):String
+}
+
+PrintHorizontal --> StringBuilder
+
+class PrintEncased implements IPrintPattern {
+    +printPattern(float values[], int significantFigures):String
+}
+
+PrintEncased --> StringBuilder
+
+@enduml
